@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Activity Tracker</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Daily Protocol And Efficiency Analyzer</p>
+                <h1>Simple Activity Tracker</h1>
+                <p class="hero-text">
+                    Add your daily activities, save them in the browser, and switch between light and dark mode.
+                </p>
+            </div>
+            <button id="themeToggle" class="theme-btn" type="button">Dark Mode</button>
+        </header>
+
+        <main class="layout">
+            <section class="card">
+                <h2>Add Activity</h2>
+
+                <form id="activityForm" class="activity-form">
+                    <label for="activityName">Activity Name</label>
+                    <input type="text" id="activityName" placeholder="e.g. Study Java" required>
+
+                    <label for="activityCategory">Category</label>
+                    <select id="activityCategory">
+                        <option value="Study">Study</option>
+                        <option value="Coding">Coding</option>
+                        <option value="Exercise">Exercise</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+
+                    <label for="activityDate">Date</label>
+                    <input type="date" id="activityDate" required>
+
+                    <div class="time-row">
+                        <div>
+                            <label for="hours">Hours</label>
+                            <input type="number" id="hours" min="0" max="23" value="0" required>
+                        </div>
+
+                        <div>
+                            <label for="minutes">Minutes</label>
+                            <input type="number" id="minutes" min="0" max="59" value="0" required>
+                        </div>
+                    </div>
+
+                    <label for="activityNotes">Notes</label>
+                    <textarea id="activityNotes" rows="3" placeholder="Optional note"></textarea>
+
+                    <p id="formMessage" class="form-message"></p>
+
+                    <button id="addBtn" class="primary-btn" type="submit">Add Activity</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>Summary</h2>
+
+                <div class="summary-grid">
+                    <div class="summary-box">
+                        <span class="summary-label">Total Tasks</span>
+                        <strong id="totalActivities">0</strong>
+                    </div>
+
+                    <div class="summary-box">
+                        <span class="summary-label">Total Time</span>
+                        <strong id="totalHours">0h 0m</strong>
+                    </div>
+                </div>
+
+                <h2>Activity List</h2>
+                <p id="emptyState" class="empty-state">No activities added yet.</p>
+                <ul id="activityList" class="activity-list"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
